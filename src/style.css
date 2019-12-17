@@ -5,3 +5,8 @@
 @tailwind components;
 
 @tailwind utilities;
+
+body {
+  background: black;
+  font-size: 18px;
+}

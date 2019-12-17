@@ -1,19 +1,21 @@
-import Layout from "../components/layout";
+import "../style.css";
+import { Content } from "../data";
 
 function Home() {
   return (
-    <Layout>
-      <div className="flex flex-col items-center justify-center">
-        <img
-          src="team-of-critters.svg"
-          className="max-w-xl w-full"
-        />
-
-        <h2 className="bg-yellow-400 font-bold my-8 p-3 text-lg md:text-2xl">
-          Hi! Welcome to your first Next.js site.
-        </h2>
-      </div>
-    </Layout>
+    <div className="flex flex-row flex-wrap w-full text-white text-lg">
+      {Content.map(data => {
+        return (
+          <div className="flex w-full lg:w-1/2 p-6 lg:p-10 justify-center items-center">
+            <img src={data.icon} className="w-10 h-10 mr-4 lg:mr-8" />
+            <div className="flex-1">
+              <div className="text-orange-500">{data.title}</div>
+              <div>{data.discription}</div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
